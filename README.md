@@ -58,5 +58,5 @@ jupyter nbconvert --to html 02_citizen_science_sampling_reanalysis.ipynb
 - The PyFixest small-sample correction is configured to match the released Stata specifications.
 
 ## DAGs
-[](../figures/DAGs.png)
+![](../figures/DAGs.png)
 
