@@ -56,3 +56,7 @@ jupyter nbconvert --to html 02_citizen_science_sampling_reanalysis.ipynb
 - The principal models absorb county and exact year-month fixed effects and cluster standard errors by county.
 - Fixed-effects OLS uses PyFixest's recursive singleton removal. The authors' IV code specifies Stata's `keepsingleton`, so the IV reproduction uses `fixef_rm="none"`.
 - The PyFixest small-sample correction is configured to match the released Stata specifications.
+
+## DAGs
+[](../figures/DAGs.png)
+
