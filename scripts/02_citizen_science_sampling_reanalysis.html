@@ -8766,7 +8766,7 @@ a.anchor-link {
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>&lt;matplotlib.collections.PathCollection at 0x1294de110&gt;</pre>
+<pre>&lt;matplotlib.collections.PathCollection at 0x16b6af290&gt;</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -9125,6 +9125,8 @@ a.anchor-link {
 <p>While it is totally confusing why BT (total observation time) can be 0 when BN &gt; 0 (observer count &gt; 0), we can see that this positive observer counts paired with zero duration fall from 68.1% of rows in 2015 to 0.2% in 2023, while the median observer count rises from one to three. It is possible that the old checklists were missing duration information, while as the increase of adoption of devices like mobile phone, these sampling parameters are increasingly being recorded.</p>
 <p>This <strong>sampling domain shift</strong> is considered an important confounder when using citizen science data to calculate any among-year temporal trend. The study accounted for the <strong>national-wide sampling domain shift</strong> by including year as a fixed effect, but not county-specific platform adoption, observer composition, completeness, access, or reporting quality. If counties have different type/speed of sampling domain shifts, the model can easily take that as a true effect of PSI on biodiversity.</p>
 <p>A possible mechanism to explain the patterns in the study is that in counties where PSI became higher overtime, the installed PV panels on the ground changed the behavior of observers, either reducing their observation time or reducing the number of observers (it's easy to understand that a birder can be unwilling to birdwatch around solar panels). Consequently, the reduced sampling efforts can result in reduced species count, and therefore a lower observed biodiversity index. This is supported by the data, as the number of observers increase over the years, and that <code>observer count</code> correlates more strongly with <code>ShannonBD</code> and <code>richness</code> than <code>duration ratio</code> does.</p>
+<p>Another possible mechanism: The counties that have high PSI increase are also counties that are rapidly developing. More checklists could be taken on urban area as the city expand. Since urban areas generally have low diversity, the recorded diversity at the county level may be dragged down by these checklists. However, this reflects the temporal change of spatial bias in sampling distribution instead of a result of PSI, since the checklists could be taken far away from the solar panels.</p>
+<p>There could be many other possible mechanisms if you think about how the sampling process can be influenced.</p>
 <p>In conclusion, the county-specific sampling domain shifts that this study failed to account for can produce the exact patterns in the paper.</p>
 </font>
 </div>
@@ -9608,38 +9610,38 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style type="text/css">
-#T_64179_row0_col0, #T_64179_row0_col1, #T_64179_row1_col0, #T_64179_row1_col1, #T_64179_row2_col0, #T_64179_row2_col1, #T_64179_row3_col0, #T_64179_row3_col1 {
+#T_a7e3e_row0_col0, #T_a7e3e_row0_col1, #T_a7e3e_row1_col0, #T_a7e3e_row1_col1, #T_a7e3e_row2_col0, #T_a7e3e_row2_col1, #T_a7e3e_row3_col0, #T_a7e3e_row3_col1 {
   text-align: left;
 }
 </style>
-<table id="T_64179">
+<table id="T_a7e3e">
 <thead>
 <tr>
 <th class="blank level0"> </th>
-<th class="col_heading level0 col0" id="T_64179_level0_col0">quantity</th>
-<th class="col_heading level0 col1" id="T_64179_level0_col1">value</th>
+<th class="col_heading level0 col0" id="T_a7e3e_level0_col0">quantity</th>
+<th class="col_heading level0 col1" id="T_a7e3e_level0_col1">value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<th class="row_heading level0 row0" id="T_64179_level0_row0">0</th>
-<td class="data row0 col0" id="T_64179_row0_col0">PSI coefficient in observer-count equation (delta)</td>
-<td class="data row0 col1" id="T_64179_row0_col1">-0.032407</td>
+<th class="row_heading level0 row0" id="T_a7e3e_level0_row0">0</th>
+<td class="data row0 col0" id="T_a7e3e_row0_col0">PSI coefficient in observer-count equation (delta)</td>
+<td class="data row0 col1" id="T_a7e3e_row0_col1">-0.032407</td>
 </tr>
 <tr>
-<th class="row_heading level0 row1" id="T_64179_level0_row1">1</th>
-<td class="data row1 col0" id="T_64179_row1_col0">Observer coefficient in full Shannon equation (gamma)</td>
-<td class="data row1 col1" id="T_64179_row1_col1">0.493120</td>
+<th class="row_heading level0 row1" id="T_a7e3e_level0_row1">1</th>
+<td class="data row1 col0" id="T_a7e3e_row1_col0">Observer coefficient in full Shannon equation (gamma)</td>
+<td class="data row1 col1" id="T_a7e3e_row1_col1">0.493120</td>
 </tr>
 <tr>
-<th class="row_heading level0 row2" id="T_64179_level0_row2">2</th>
-<td class="data row2 col0" id="T_64179_row2_col0">delta times gamma</td>
-<td class="data row2 col1" id="T_64179_row2_col1">-0.015981</td>
+<th class="row_heading level0 row2" id="T_a7e3e_level0_row2">2</th>
+<td class="data row2 col0" id="T_a7e3e_row2_col0">delta times gamma</td>
+<td class="data row2 col1" id="T_a7e3e_row2_col1">-0.015981</td>
 </tr>
 <tr>
-<th class="row_heading level0 row3" id="T_64179_level0_row3">3</th>
-<td class="data row3 col0" id="T_64179_row3_col0">Released PSI coefficient minus observer-adjusted coefficient</td>
-<td class="data row3 col1" id="T_64179_row3_col1">-0.015981</td>
+<th class="row_heading level0 row3" id="T_a7e3e_level0_row3">3</th>
+<td class="data row3 col0" id="T_a7e3e_row3_col0">Released PSI coefficient minus observer-adjusted coefficient</td>
+<td class="data row3 col1" id="T_a7e3e_row3_col1">-0.015981</td>
 </tr>
 </tbody>
 </table>
