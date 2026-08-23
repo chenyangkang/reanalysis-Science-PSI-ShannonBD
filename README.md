@@ -8,8 +8,8 @@ This repository contains two concise, self-contained reanalysis notebooks for th
 The notebooks have been executed from top to bottom and retain their outputs. Matching HTML exports are included for reading without Jupyter.
 
 To see analysis and annotation, click on:
-- [Notebook 1: Replication and coefficient reanalysis](01_replication_and_coefficient_reanalysis.ipynb)
-- [Notebook 2: Citizen science sampling reanalysis](02_citizen_science_sampling_reanalysis.ipynb)
+- [Notebook 1: Replication and coefficient reanalysis](./scripts/01_replication_and_coefficient_reanalysis.ipynb)
+- [Notebook 2: Citizen science sampling reanalysis](./scripts/02_citizen_science_sampling_reanalysis.ipynb)
 
 ## Folder layout
 
