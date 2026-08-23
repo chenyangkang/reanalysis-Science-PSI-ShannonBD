@@ -27,7 +27,7 @@ def fit_fe(
     data: pd.DataFrame,
     outcome: str,
     regressors: Sequence[str],
-    fe_columns: Sequence[str] = ("id", "year"),
+    fe_columns: Sequence[str] = ("id", "year"), # although they named it year but this variable is actually year-month... The capitalization of the variable YEAR is the true year variable.
     cluster_column: str = "id",
     focal: str | None = "PI",
     label: str = "",

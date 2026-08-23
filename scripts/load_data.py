@@ -42,7 +42,7 @@ def build_analysis_data(data_dir: Path) -> tuple[pd.DataFrame, pd.DataFrame, pd.
     bird = read_dta(data_dir, "Bird.dta")
     bird["YEAR"] = bird["YEAR"].astype(int)
     bird["month"] = bird["month"].astype(int)
-    bird["year"] = pd.to_datetime(bird["year"])
+    bird["year"] = pd.to_datetime(bird["year"]) # although they named it year but this variable is actually year-month... The capitalization of the variable YEAR is the true year variable.
 
     btn = read_dta(data_dir, "BTN.dta")
     btn["year"] = pd.to_datetime(btn["year"])

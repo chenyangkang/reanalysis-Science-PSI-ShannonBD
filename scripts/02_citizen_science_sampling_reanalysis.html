@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Citizen-science sampling and effort audit</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Citizen science sampling and effort reanalysis</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7551,6 +7551,20 @@ a.anchor-link {
 </div>
 </div>
 </div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6487090f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<font size="4">
+<p>The <a href="https://www.birdreport.cn">China Bird Report</a> citizen science platform interface (as of Aug 23, 2026):</p>
+<img alt="Birdreport interface" src="../figures/birdreport.png" width="650"/>
+</font>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a83f9029">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7867,6 +7881,19 @@ a.anchor-link {
 <p>48902 rows × 11 columns</p>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6ae88264">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<font size="4">
+<p>Again notice that although they named it a column <code>year</code> but this variable is actually <code>year-month</code>... The capitalization of the variable YEAR is the true year variable. I didn't change the naming to make it consistent with those in the paper.</p>
+</font>
 </div>
 </div>
 </div>
@@ -8238,7 +8265,7 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <font size="4">
-<p>It is confusing why when BN &gt; 0 (observer count &gt; 0), BT (total observation time) can be 0.</p>
+<p>It is confusing why when BN &gt; 0 (observer count &gt; 0), BT (total observation time) can be 0. I suspect it's because the historical records were not removed. See the discussion below.</p>
 </font>
 </div>
 </div>
@@ -8766,7 +8793,7 @@ a.anchor-link {
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>&lt;matplotlib.collections.PathCollection at 0x16b6af290&gt;</pre>
+<pre>&lt;matplotlib.collections.PathCollection at 0x127a46890&gt;</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -9123,10 +9150,10 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <font size="4">
 <p>While it is totally confusing why BT (total observation time) can be 0 when BN &gt; 0 (observer count &gt; 0), we can see that this positive observer counts paired with zero duration fall from 68.1% of rows in 2015 to 0.2% in 2023, while the median observer count rises from one to three. Observers might retrospectively add checklists from observations made many years earlier to build their lifetime species lists (“life lists”). Duration information for such historical records may be missing. As the increase of adoption of devices like mobile phone, these sampling parameters are also increasingly easy to be recorded.</p>
-<p>This <strong>sampling domain shift</strong> is considered an important confounder when using citizen science data to calculate any among-year temporal trend. The study accounted for the <strong>national-wide sampling domain shift</strong> by including year as a fixed effect, but not county-specific platform adoption, observer composition, completeness, access, or reporting quality. If counties have different type/speed of sampling domain shifts, the model can easily take that as a true effect of PSI on biodiversity.</p>
+<p>This <strong>sampling domain shift</strong> is considered an important confounder when using citizen science data to calculate any among-year temporal trend. The study accounted for the <strong>national-wide sampling domain shift</strong> by including month-year as a fixed effect, but not county-specific platform adoption, observer composition, completeness, access, or reporting quality. If counties have different type/speed of sampling domain shifts, the model can easily take that as a true effect of PSI on biodiversity.</p>
 <p>A possible mechanism to explain the patterns in the study is that in counties where PSI became higher overtime, the installed PV panels on the ground changed the behavior of observers, either reducing their observation time or reducing the number of observers (it's easy to understand that a birder can be unwilling to birdwatch around solar panels). Consequently, the reduced sampling efforts can result in reduced species count, and therefore a lower observed biodiversity index. This is supported by the data, as the number of observers increase over the years, and that <code>observer count</code> correlates more strongly with <code>ShannonBD</code> and <code>richness</code> than <code>duration ratio</code> does.</p>
 <p>Another possible mechanism: The counties that have high PSI increase are also counties that are rapidly developing. More checklists could be taken on urban area as the city expand. Since urban areas generally have low diversity, the recorded diversity at the county level may be dragged down by these checklists. However, this reflects the temporal change of spatial bias in sampling distribution instead of a result of PSI, since the checklists could be taken far away from the solar panels.</p>
-<p>There could be many other possible mechanisms if you think about how the sampling process can be influenced.</p>
+<p>There could be many other possible mechanisms if you think about how the sampling processes can be influenced.</p>
 <p>In conclusion, the county-specific sampling domain shifts that this study failed to account for can produce the exact patterns in the paper.</p>
 </font>
 </div>
@@ -9240,7 +9267,7 @@ a.anchor-link {
 <td>Log total observation time</td>
 <td>-0.0564721</td>
 <td>0.00768234</td>
-<td>2.70635e-13</td>
+<td>2.70634e-13</td>
 <td>46371</td>
 <td>-20.7371</td>
 </tr>
@@ -9291,20 +9318,10 @@ a.anchor-link {
     <span class="n">df</span><span class="p">,</span> <span class="s2">"ShannonBD"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"PI"</span><span class="p">,</span> <span class="o">*</span><span class="n">controls_no_duration</span><span class="p">,</span> <span class="s2">"log_BT_w"</span><span class="p">,</span> <span class="s2">"log_BN_w"</span><span class="p">]</span>
 <span class="p">)</span>
 
-<span class="n">cell_count</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"county_month"</span><span class="p">)[</span><span class="s2">"year"</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="s2">"nunique"</span><span class="p">)</span>
-<span class="n">repeated</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">cell_count</span> <span class="o">&gt;=</span> <span class="mi">5</span><span class="p">]</span>
-<span class="n">stable_season</span> <span class="o">=</span> <span class="n">fit_fe</span><span class="p">(</span>
-    <span class="n">repeated</span><span class="p">,</span>
-    <span class="s2">"ShannonBD"</span><span class="p">,</span>
-    <span class="p">[</span><span class="s2">"PI"</span><span class="p">,</span> <span class="o">*</span><span class="n">controls</span><span class="p">,</span> <span class="s2">"log_BN_w"</span><span class="p">],</span>
-    <span class="n">fe_columns</span><span class="o">=</span><span class="p">(</span><span class="s2">"county_month"</span><span class="p">,</span> <span class="s2">"year"</span><span class="p">),</span>
-<span class="p">)</span>
-
 <span class="n">display</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span>
     <span class="n">result_row</span><span class="p">(</span><span class="s2">"Released Shannon model"</span><span class="p">,</span> <span class="n">released</span><span class="p">),</span>
     <span class="n">result_row</span><span class="p">(</span><span class="s2">"Add observer count"</span><span class="p">,</span> <span class="n">add_observers</span><span class="p">),</span>
-    <span class="n">result_row</span><span class="p">(</span><span class="s2">"Separate total time and observer count"</span><span class="p">,</span> <span class="n">separate_effort</span><span class="p">),</span>
-    <span class="n">result_row</span><span class="p">(</span><span class="s2">"Repeated county-season + observer count"</span><span class="p">,</span> <span class="n">stable_season</span><span class="p">),</span>
+    <span class="n">result_row</span><span class="p">(</span><span class="s2">"Separate total time and observer count"</span><span class="p">,</span> <span class="n">separate_effort</span><span class="p">)</span>
 <span class="p">]))</span>
 </pre></div>
 </div>
@@ -9349,7 +9366,7 @@ a.anchor-link {
 <td>Released Shannon model</td>
 <td>-0.0125284</td>
 <td>0.00365035</td>
-<td>0.000609325</td>
+<td>0.000609324</td>
 <td>46371</td>
 </tr>
 <tr>
@@ -9365,16 +9382,8 @@ a.anchor-link {
 <td>Separate total time and observer count</td>
 <td>0.00335114</td>
 <td>0.00325469</td>
-<td>0.303288</td>
+<td>0.303289</td>
 <td>46371</td>
-</tr>
-<tr>
-<th>3</th>
-<td>Repeated county-season + observer count</td>
-<td>0.00514526</td>
-<td>0.00623439</td>
-<td>0.409538</td>
-<td>16573</td>
 </tr>
 </tbody>
 </table>
@@ -9453,7 +9462,7 @@ a.anchor-link {
 <td>Released model</td>
 <td>-0.0125284</td>
 <td>-2.10628</td>
-<td>0.000609325</td>
+<td>0.000609324</td>
 </tr>
 <tr>
 <th>1</th>
@@ -9527,14 +9536,14 @@ a.anchor-link {
 <td>Released richness model</td>
 <td>-0.97514</td>
 <td>0.182608</td>
-<td>1.01984e-07</td>
+<td>1.01983e-07</td>
 <td>45606</td>
 </tr>
 <tr>
 <th>1</th>
 <td>Richness + observer count</td>
 <td>-0.0073654</td>
-<td>0.0774491</td>
+<td>0.077449</td>
 <td>0.924244</td>
 <td>45606</td>
 </tr>
@@ -9610,38 +9619,38 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style type="text/css">
-#T_a7e3e_row0_col0, #T_a7e3e_row0_col1, #T_a7e3e_row1_col0, #T_a7e3e_row1_col1, #T_a7e3e_row2_col0, #T_a7e3e_row2_col1, #T_a7e3e_row3_col0, #T_a7e3e_row3_col1 {
+#T_3e728_row0_col0, #T_3e728_row0_col1, #T_3e728_row1_col0, #T_3e728_row1_col1, #T_3e728_row2_col0, #T_3e728_row2_col1, #T_3e728_row3_col0, #T_3e728_row3_col1 {
   text-align: left;
 }
 </style>
-<table id="T_a7e3e">
+<table id="T_3e728">
 <thead>
 <tr>
 <th class="blank level0"> </th>
-<th class="col_heading level0 col0" id="T_a7e3e_level0_col0">quantity</th>
-<th class="col_heading level0 col1" id="T_a7e3e_level0_col1">value</th>
+<th class="col_heading level0 col0" id="T_3e728_level0_col0">quantity</th>
+<th class="col_heading level0 col1" id="T_3e728_level0_col1">value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<th class="row_heading level0 row0" id="T_a7e3e_level0_row0">0</th>
-<td class="data row0 col0" id="T_a7e3e_row0_col0">PSI coefficient in observer-count equation (delta)</td>
-<td class="data row0 col1" id="T_a7e3e_row0_col1">-0.032407</td>
+<th class="row_heading level0 row0" id="T_3e728_level0_row0">0</th>
+<td class="data row0 col0" id="T_3e728_row0_col0">PSI coefficient in observer-count equation (delta)</td>
+<td class="data row0 col1" id="T_3e728_row0_col1">-0.032407</td>
 </tr>
 <tr>
-<th class="row_heading level0 row1" id="T_a7e3e_level0_row1">1</th>
-<td class="data row1 col0" id="T_a7e3e_row1_col0">Observer coefficient in full Shannon equation (gamma)</td>
-<td class="data row1 col1" id="T_a7e3e_row1_col1">0.493120</td>
+<th class="row_heading level0 row1" id="T_3e728_level0_row1">1</th>
+<td class="data row1 col0" id="T_3e728_row1_col0">Observer coefficient in full Shannon equation (gamma)</td>
+<td class="data row1 col1" id="T_3e728_row1_col1">0.493120</td>
 </tr>
 <tr>
-<th class="row_heading level0 row2" id="T_a7e3e_level0_row2">2</th>
-<td class="data row2 col0" id="T_a7e3e_row2_col0">delta times gamma</td>
-<td class="data row2 col1" id="T_a7e3e_row2_col1">-0.015981</td>
+<th class="row_heading level0 row2" id="T_3e728_level0_row2">2</th>
+<td class="data row2 col0" id="T_3e728_row2_col0">delta times gamma</td>
+<td class="data row2 col1" id="T_3e728_row2_col1">-0.015981</td>
 </tr>
 <tr>
-<th class="row_heading level0 row3" id="T_a7e3e_level0_row3">3</th>
-<td class="data row3 col0" id="T_a7e3e_row3_col0">Released PSI coefficient minus observer-adjusted coefficient</td>
-<td class="data row3 col1" id="T_a7e3e_row3_col1">-0.015981</td>
+<th class="row_heading level0 row3" id="T_3e728_level0_row3">3</th>
+<td class="data row3 col0" id="T_3e728_row3_col0">Released PSI coefficient minus observer-adjusted coefficient</td>
+<td class="data row3 col1" id="T_3e728_row3_col1">-0.015981</td>
 </tr>
 </tbody>
 </table>
@@ -9815,7 +9824,7 @@ flowchart LR
 <td>1.35742e-07</td>
 <td>0.497073</td>
 <td>0.0112907</td>
-<td>1.40898e-299</td>
+<td>1.40899e-299</td>
 </tr>
 <tr>
 <th>2</th>
@@ -9828,7 +9837,7 @@ flowchart LR
 <td>NaN</td>
 <td>-0.006559</td>
 <td>0.000777157</td>
-<td>5.87794e-17</td>
+<td>5.87789e-17</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
@@ -9849,6 +9858,54 @@ flowchart LR
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <font size="4">
 <p>The released IV model estimates a significant negative effect of PSI on Shannon diversity ($\beta=-0.126$, $p&lt;0.001$), but the estimate becomes essentially zero after controlling for observer count ($\beta=0.003$, $p=0.912$), even though the instrument continues to predict PSI strongly. Observer count is strongly associated with recorded diversity, and the instrument itself significantly predicts observer count. Together, these results indicate that the original IV estimate may reflect an alternative sampling pathway—instrument $\rightarrow$ observer count $\rightarrow$ recorded diversity—rather than an effect operating exclusively through PSI, thereby raising a serious concern about the IV exclusion restriction.</p>
+</font>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fea97ded">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="One-more-thing-to-think-about-as-someone-who-study-birds">One more thing to think about as someone who study birds<a class="anchor-link" href="#One-more-thing-to-think-about-as-someone-who-study-birds">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=df1a87d6">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<font size="4">
+<p>While the study managed to account for year-month effect at national scale, it is important to note that the seasonality of birds does not occur and shift synchronously across the landscape. For example, in spring migration we might see diversity index to increase at the southern end of the country as migratory bird species from South Asia, Southeast Asia and Africa to flux in, and gradually moving northward. This process can take a few months, and this is especially important given that China is such a large country with wide span of longitude and latitude. Such <strong>heterogeneous change of biodiversity</strong> is not captured by the fixed effect, and therefore leaving the inferred coefficients biased. Using <code>county-month</code> as fixed effect will allow each county to have its own seasonal pattern, therefore might be a way to address it.</p>
+<font size="4">
+</font></font></div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a68b9f5b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="And-just-one-more-thing,-a-question-I-got-from-an-economist...">And just one more thing, a question I got from an economist...<a class="anchor-link" href="#And-just-one-more-thing,-a-question-I-got-from-an-economist...">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=55ae69df">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<font size="4">
+<p>Someone suggested that observer count could be a collider between PSI and observed diversity and therefore should not be controlled for. This is an interesting point, but after thinking it through, I do not find it very convincing in this context. The paper includes county and year-month two-way fixed effects, so the coefficient is identified primarily from changes in PSI within a county over time and their association with changes in observed diversity. For the proposed collider mechanism to operate, birdwatchers within a county would seemingly need to perceive changes in Shannon diversity on the order of 2.1% and adjust their participation accordingly. That seems implausible to me. More broadly, setting this particular case aside, from an ecological perspective, analyzing observational biodiversity data without accounting for variation in sampling effort seems methodologically indefensible.</p>
 </font>
 </div>
 </div>
