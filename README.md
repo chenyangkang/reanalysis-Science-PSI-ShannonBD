@@ -11,7 +11,7 @@ To see analysis and annotation, click on:
 - [Notebook 1: Replication and coefficient reanalysis](./scripts/01_replication_and_coefficient_reanalysis.ipynb)
 - [Notebook 2: Citizen science sampling reanalysis](./scripts/02_citizen_science_sampling_reanalysis.ipynb)
 
-To read the comment manuscript (recommended), click on:
+To read the comment manuscript (recommended), click and download:
 - [Our manuscript](./Reanalysis-Science-PSI-ShannonBD_Aug25_2026_for_submission.pdf)
 
 
