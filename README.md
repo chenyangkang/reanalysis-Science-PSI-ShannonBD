@@ -14,6 +14,9 @@ To see analysis and annotation, click on:
 To read the comment manuscript (recommended), click and download:
 - [Our manuscript](./Reanalysis-Science-PSI-ShannonBD_Aug25_2026_for_submission.pdf)
 
+## Archived code and manuscript
+
+Available at Zenodo: https://zenodo.org/records/22102223
 
 ## Folder layout
 
