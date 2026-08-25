@@ -71,3 +71,5 @@ jupyter nbconvert --to html 02_citizen_science_sampling_reanalysis.ipynb
 ## DAGs
 ![DAGs](./figures/DAGs.png)
 
+## Mechanistic and physical pathways
+<img src="./figures/pathways.png" alt="Mechanistic and physical pathways" width="60%">
