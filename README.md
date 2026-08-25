@@ -23,11 +23,18 @@ The released data are read only; the notebooks do not modify files in `../DATA/`
 
 ## Main findings
 
-- The released negative PSI coefficient is reproduced, but PSI also predicts sampling efforts, including observer count and total recorded observation time within counties.
-- The duration-per-observer variable does not preserve sampling scale, and the released effort fields contain extreme values, internal discrepancies, and strong sampling effort domain shift over time.
-- Adding observer count changes the fixed-effects PSI estimate from negative and significant to small, positive, and nonsignificant. The corresponding richness estimate nearly disappears.
-- The IV estimate is similarly eliminated by observer adjustment, while the instrument itself predicts observer count, raising concern about the exclusion restriction.
-- These diagnostics do not prove that the ecological effect is zero. They show that the claimed negative causal effect cannot be distinguished from changing sampling coverage and detectability using the released aggregate data.
+1. **Sampling effort is the central problem.** Observed Shannon diversity reflects both the underlying bird community and the observation process. PSI is associated with sample inclusion, observer count, and total observation time. Adding observer count changes the fixed-effects estimate from −2.10% (*P* = 0.0006) to +0.58% (*P* = 0.288), reduces the IV estimate to near zero (*P* = 0.912), and strongly attenuates the richness association.
+
+2. **Poor data quality and erroneous preprocessing.** Pooling checklists into county-month aggregates removes information on protocol, duration, distance, completeness, observer identity, and observer skill. The duration-per-observer variable also discards total sampling scale, while the released data contain implausible values, internal inconsistencies, and pronounced temporal shifts in coverage and reporting.
+
+3. **The proposed causal and mechanistic pathways are not supported.** PSI is not associated with photovoltaic area under the study’s fixed-effects specification, the deployment-to-habitat link was not tested, and the photovoltaic-area and LAI associations with observed diversity disappear or remain nonsignificant after observer adjustment.
+
+4. **The reported high R² values are dominated by fixed effects.** PSI partial R² is only 0.048% for Shannon diversity and 0.36%, 2.57%, and 0.75% for NDVI, nighttime lights, and LAI, respectively.
+
+5. **The released data cannot distinguish ecological change from changes in sampling coverage and detectability.** Neither the original −2.10% estimate nor the observer-adjusted +0.58% estimate should be interpreted as the true ecological effect. Their sensitivity shows that the claimed negative causal effect is not identified by the released aggregates.
+
+6. **Causal claims from large observational datasets should be treated with caution.** Statistical significance alone does not establish ecological importance or causal identification. Researchers applying methods to ecological data should collaborate closely with ecologists familiar with the data-generating and observation processes.
+
 
 ## Install
 
