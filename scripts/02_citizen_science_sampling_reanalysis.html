@@ -8793,7 +8793,7 @@ a.anchor-link {
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>&lt;matplotlib.collections.PathCollection at 0x168a9a7d0&gt;</pre>
+<pre>&lt;matplotlib.collections.PathCollection at 0x1284f2590&gt;</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -9714,38 +9714,38 @@ Name: id, Length: 46371, dtype: int32</pre>
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style type="text/css">
-#T_55b81_row0_col0, #T_55b81_row0_col1, #T_55b81_row1_col0, #T_55b81_row1_col1, #T_55b81_row2_col0, #T_55b81_row2_col1, #T_55b81_row3_col0, #T_55b81_row3_col1 {
+#T_19440_row0_col0, #T_19440_row0_col1, #T_19440_row1_col0, #T_19440_row1_col1, #T_19440_row2_col0, #T_19440_row2_col1, #T_19440_row3_col0, #T_19440_row3_col1 {
   text-align: left;
 }
 </style>
-<table id="T_55b81">
+<table id="T_19440">
 <thead>
 <tr>
 <th class="blank level0"> </th>
-<th class="col_heading level0 col0" id="T_55b81_level0_col0">quantity</th>
-<th class="col_heading level0 col1" id="T_55b81_level0_col1">value</th>
+<th class="col_heading level0 col0" id="T_19440_level0_col0">quantity</th>
+<th class="col_heading level0 col1" id="T_19440_level0_col1">value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<th class="row_heading level0 row0" id="T_55b81_level0_row0">0</th>
-<td class="data row0 col0" id="T_55b81_row0_col0">PSI coefficient in observer-count equation (delta)</td>
-<td class="data row0 col1" id="T_55b81_row0_col1">-0.032407</td>
+<th class="row_heading level0 row0" id="T_19440_level0_row0">0</th>
+<td class="data row0 col0" id="T_19440_row0_col0">PSI coefficient in observer-count equation (delta)</td>
+<td class="data row0 col1" id="T_19440_row0_col1">-0.032407</td>
 </tr>
 <tr>
-<th class="row_heading level0 row1" id="T_55b81_level0_row1">1</th>
-<td class="data row1 col0" id="T_55b81_row1_col0">Observer coefficient in full Shannon equation (gamma)</td>
-<td class="data row1 col1" id="T_55b81_row1_col1">0.493120</td>
+<th class="row_heading level0 row1" id="T_19440_level0_row1">1</th>
+<td class="data row1 col0" id="T_19440_row1_col0">Observer coefficient in full Shannon equation (gamma)</td>
+<td class="data row1 col1" id="T_19440_row1_col1">0.493120</td>
 </tr>
 <tr>
-<th class="row_heading level0 row2" id="T_55b81_level0_row2">2</th>
-<td class="data row2 col0" id="T_55b81_row2_col0">delta times gamma</td>
-<td class="data row2 col1" id="T_55b81_row2_col1">-0.015981</td>
+<th class="row_heading level0 row2" id="T_19440_level0_row2">2</th>
+<td class="data row2 col0" id="T_19440_row2_col0">delta times gamma</td>
+<td class="data row2 col1" id="T_19440_row2_col1">-0.015981</td>
 </tr>
 <tr>
-<th class="row_heading level0 row3" id="T_55b81_level0_row3">3</th>
-<td class="data row3 col0" id="T_55b81_row3_col0">Released PSI coefficient minus observer-adjusted coefficient</td>
-<td class="data row3 col1" id="T_55b81_row3_col1">-0.015981</td>
+<th class="row_heading level0 row3" id="T_19440_level0_row3">3</th>
+<td class="data row3 col0" id="T_19440_row3_col0">Released PSI coefficient minus observer-adjusted coefficient</td>
+<td class="data row3 col1" id="T_19440_row3_col1">-0.015981</td>
 </tr>
 </tbody>
 </table>
@@ -9782,12 +9782,28 @@ $$</p>
 <li>Observer count omitted (the analysis in the paper)</li>
 </ol>
 <div class="jp-Mermaid"><pre class="mermaid">
-%%{init: {"themeVariables": {"fontSize": "18px"}}}%%
+%%{init: {
+  "themeVariables": {
+    "fontSize": "18px",
+    "primaryColor": "#ffffff",
+    "primaryTextColor": "#000000",
+    "primaryBorderColor": "#000000",
+    "textColor": "#000000",
+    "edgeLabelBackground": "rgba(255,255,255,0)"
+  },
+  "themeCSS": ".edgeLabel rect, .labelBkg { fill:none !important; fill-opacity:0 !important; stroke:none !important; } .edgeLabel text { fill:#000000 !important; stroke:#ffffff !important; stroke-width:3px !important; paint-order:stroke fill; stroke-linejoin:round; }",
+  "flowchart": {
+    "htmlLabels": false,
+    "curve": "monotoneY",
+    "nodeSpacing": 70,
+    "rankSpacing": 85
+  }
+}}%%
 flowchart LR
     X("Policy stringency<br>(PSI)")
-    Y("Observed Shannon diversity")
+    Y("Observed<br/>Shannon diversity")
 
-    X --&gt;|"Estimated PSI coefficient<br/>β = −0.01253<br/>-2.1% per 1 SD<br/><i>P</i> &lt; 0.001"| Y
+    X --&gt;|"Estimated PSI coefficient<br/>β = −0.01253<br/>-2.1% per 1 SD<br/>P &lt; 0.001"| Y
 </br></pre></div></font>
 </div>
 </div>
@@ -9804,15 +9820,31 @@ flowchart LR
 <li>Observer count included (our reanalysis)</li>
 </ol>
 <div class="jp-Mermaid"><pre class="mermaid">
-%%{init: {"themeVariables": {"fontSize": "18px"}}}%%
+%%{init: {
+  "themeVariables": {
+    "fontSize": "18px",
+    "primaryColor": "#ffffff",
+    "primaryTextColor": "#000000",
+    "primaryBorderColor": "#000000",
+    "textColor": "#000000",
+    "edgeLabelBackground": "rgba(255,255,255,0)"
+  },
+  "themeCSS": ".edgeLabel rect, .labelBkg { fill:none !important; fill-opacity:0 !important; stroke:none !important; } .edgeLabel text { fill:#000000 !important; stroke:#ffffff !important; stroke-width:3px !important; paint-order:stroke fill; stroke-linejoin:round; }",
+  "flowchart": {
+    "htmlLabels": false,
+    "curve": "monotoneY",
+    "nodeSpacing": 70,
+    "rankSpacing": 85
+  }
+}}%%
 flowchart LR
     X("Policy stringency<br/>(PSI)")
     M("Observer count")
-    Y("Observed Shannon diversity")
+    Y("Observed<br/>Shannon diversity")
 
-    X --&gt;|"δ = −0.03241<br/><i>P</i> &lt; 0.001"| M
-    M --&gt;|"γ = +0.49312<br/><i>P</i> &lt; 0.001"| Y
-    X --&gt;|"Observer-adjusted β = +0.00345<br/>+0.58% per 1 SD<br/><i>P</i> = 0.288"| Y
+    X --&gt;|"δ = −0.03241<br/>P &lt; 0.001"| M
+    M --&gt;|"γ = +0.49312<br/>P &lt; 0.001"| Y
+    X --&gt;|"Observer-adjusted β = +0.00345<br/>+0.58% per 1 SD<br/>P = 0.288"| Y
 </pre></div></font>
 </div>
 </div>
@@ -10313,9 +10345,16 @@ flowchart LR
 <h3 id="The-proposed-mechanistic-chain-breaks-down">The proposed mechanistic chain breaks down<a class="anchor-link" href="#The-proposed-mechanistic-chain-breaks-down">¶</a></h3><div class="jp-Mermaid"><pre class="mermaid">
 %%{init: {
   "themeVariables": {
-    "fontSize": "18px"
+    "fontSize": "18px",
+    "primaryColor": "#ffffff",
+    "primaryTextColor": "#000000",
+    "primaryBorderColor": "#000000",
+    "textColor": "#000000",
+    "edgeLabelBackground": "rgba(255,255,255,0)"
   },
+  "themeCSS": ".edgeLabel rect, .labelBkg { fill:none !important; fill-opacity:0 !important; stroke:none !important; } .edgeLabel text { fill:#000000 !important; stroke:#ffffff !important; stroke-width:3px !important; paint-order:stroke fill; stroke-linejoin:round; }",
   "flowchart": {
+    "htmlLabels": false,
     "curve": "monotoneY",
     "nodeSpacing": 70,
     "rankSpacing": 85
@@ -10326,7 +10365,7 @@ flowchart TB
     P(["Photovoltaic policy<br/>(PSI)"])
     D(["Physical PV deployment"])
     H(["Habitat change<br/>(LAI)"])
-    O(["Observed Shannon diversity"])
+    O(["Observed<br/>Shannon diversity"])
     G(["Underlying bird diversity"])
 
     P -. "Without fixed effects<br/>β = 0.0222, P &lt; 0.01<br/>With fixed effects<br/>β = −0.00019, P = 0.977<br/>✕ Not supported" .-&gt; D
@@ -10343,9 +10382,11 @@ flowchart TB
 
     P -. "Before observer control<br/>β = −0.01253, P = 0.0006<br/>After observer control<br/>β = 0.00345, P = 0.288<br/>✕ Not supported" .-&gt; O
 
-    linkStyle 0,2,4,5,6 stroke:#c0392b,stroke-width:3px,stroke-dasharray:6 4
-    linkStyle 1 stroke:#777,stroke-width:2px,stroke-dasharray:6 4
-    linkStyle 3 stroke:#2874a6,stroke-width:2px,stroke-dasharray:4 3
+    classDef default fill:#ffffff,stroke:#000000,color:#000000,stroke-width:1.5px
+
+    linkStyle 0,2,4,5,6 stroke:#c0392b,stroke-width:3px,stroke-dasharray:6 4,color:#000000
+    linkStyle 1 stroke:#777777,stroke-width:2px,stroke-dasharray:6 4,color:#000000
+    linkStyle 3 stroke:#2874a6,stroke-width:2px,stroke-dasharray:4 3,color:#000000
 </pre></div>
 </div>
 </div>
@@ -10358,10 +10399,26 @@ flowchart TB
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="DAG-assumed-by-the-original-IV-analysis">DAG assumed by the original IV analysis<a class="anchor-link" href="#DAG-assumed-by-the-original-IV-analysis">¶</a></h3><div class="jp-Mermaid"><pre class="mermaid">
-%%{init: {"themeVariables": {"fontSize": "20px"}}}%%
+%%{init: {
+  "themeVariables": {
+    "fontSize": "18px",
+    "primaryColor": "#ffffff",
+    "primaryTextColor": "#000000",
+    "primaryBorderColor": "#000000",
+    "textColor": "#000000",
+    "edgeLabelBackground": "rgba(255,255,255,0)"
+  },
+  "themeCSS": ".edgeLabel rect, .labelBkg { fill:none !important; fill-opacity:0 !important; stroke:none !important; } .edgeLabel text { fill:#000000 !important; stroke:#ffffff !important; stroke-width:3px !important; paint-order:stroke fill; stroke-linejoin:round; }",
+  "flowchart": {
+    "htmlLabels": false,
+    "curve": "monotoneY",
+    "nodeSpacing": 70,
+    "rankSpacing": 85
+  }
+}}%%
 flowchart LR
     Z["Instrument (IV) (log(historical sunshine)/CPU)"] --&gt; X["Policy stringency (PSI)"]
-    X --&gt; Y["Observed Shannon diversity"]
+    X --&gt; Y["Observed<br/>Shannon diversity"]
 
     Z -. "✕ assumed absent" .-&gt; Y
 
@@ -10381,14 +10438,30 @@ flowchart LR
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <font size="4">
 <h3 id="DAG-suggested-by-the-sampling-analysis">DAG suggested by the sampling analysis<a class="anchor-link" href="#DAG-suggested-by-the-sampling-analysis">¶</a></h3><div class="jp-Mermaid"><pre class="mermaid">
-%%{init: {"themeVariables": {"fontSize": "20px"}}}%%
+%%{init: {
+  "themeVariables": {
+    "fontSize": "18px",
+    "primaryColor": "#ffffff",
+    "primaryTextColor": "#000000",
+    "primaryBorderColor": "#000000",
+    "textColor": "#000000",
+    "edgeLabelBackground": "rgba(255,255,255,0)"
+  },
+  "themeCSS": ".edgeLabel rect, .labelBkg { fill:none !important; fill-opacity:0 !important; stroke:none !important; } .edgeLabel text { fill:#000000 !important; stroke:#ffffff !important; stroke-width:3px !important; paint-order:stroke fill; stroke-linejoin:round; }",
+  "flowchart": {
+    "htmlLabels": false,
+    "curve": "monotoneY",
+    "nodeSpacing": 70,
+    "rankSpacing": 85
+  }
+}}%%
 flowchart LR
     U["Ecological awareness,<br/> Local environmental orientation<br/>('building eco-friendly city')"] --&gt; Z["Instrument (IV) (log(historical sunshine)/CPU)"]
     
 
     Z --&gt; X["Policy stringency (PSI)"]
     X --&gt; S
-    S --&gt; Y["Observed Shannon diversity"]
+    S --&gt; Y["Observed<br/>Shannon diversity"]
     U --&gt; S["Sampling effort<br/>and observer composition"]
 </pre></div><p>In this alternative DAG, PSI-related changes in sampling effort can affect <strong>observed/recorded</strong> rather than necessarily ecological diversity. Moreover, the changing ecological awareness and local environmental orientation may influence both the instrument and sampling effort, creating an open non-PSI pathway from the instrument to recorded Shannon diversity.</p>
 </font>
