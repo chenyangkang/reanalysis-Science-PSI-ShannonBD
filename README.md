@@ -12,11 +12,12 @@ To see analysis and annotation, click on:
 - [Notebook 2: Citizen science sampling reanalysis](./scripts/02_citizen_science_sampling_reanalysis.ipynb)
 
 To read the comment manuscript (recommended), click and download:
-- [Our manuscript](./Reanalysis-Science-PSI-ShannonBD_Aug25_2026_for_submission.pdf)
+- [Our bioRxiv preprint]([./Reanalysis-Science-PSI-ShannonBD_Aug25_2026_for_submission.pdf](https://www.biorxiv.org/content/10.64898/2026.08.25.746390v1))
 
 ## Archived code and manuscript
 
 Available at Zenodo: https://zenodo.org/records/22102223
+
 
 ## Folder layout
 
